@@ -6,13 +6,10 @@ from time import sleep
 
 myname = raw_input('What is your name? ')
 
-def kill():
-	raise sys.exit("Removed")
-
 class Client(Handler):
     
     def on_close(self):
-		pass
+		os._exit(0)
     
     def on_msg(self, msg):
 		print msg

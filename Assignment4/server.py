@@ -46,6 +46,8 @@ while 1:
 	    poll()
 	    sleep(0.05)  # seconds
 	except KeyboardInterrupt:
+		for i in handlers:
+			i.do_close()
 		server.close()
 		exit("\n")
 
