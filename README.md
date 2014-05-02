@@ -1,7 +1,5 @@
 INF123
 ======
-- test
-
 Informatics 123 Repo for projects and assignments
 
 - Assignment 2: Added first solo project "Memory puzzle" in the solo folder
