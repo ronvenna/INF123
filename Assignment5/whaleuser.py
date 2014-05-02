@@ -2,15 +2,6 @@ from random import randint
 from time import sleep
 from common import Model
 
-
-################### MODEL #############################
-
-def collide_boxes(box1, box2):
-    x1, y1, w1, h1 = box1
-    x2, y2, w2, h2 = box2
-    return x1 < x2 + w2 and y1 < y2 + h2 and x2 < x1 + w1 and y2 < y1 + h1
-    
-
 ################### CONTROLLER #############################
 
 from pygame.locals import KEYDOWN, QUIT, K_ESCAPE, K_UP, K_DOWN, K_LEFT, K_RIGHT

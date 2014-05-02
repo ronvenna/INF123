@@ -1,7 +1,5 @@
 from random import randint
 from time import sleep
-
-
 ################### MODEL #############################
 
 def collide_boxes(box1, box2):
@@ -48,59 +46,4 @@ class Model():
                 self.mybox[2] *= 1.2
                 self.mybox[3] *= 1.2
                 self.pellets[index] = [randint(10, 380), randint(10, 280), 5, 5]
-            
-
-################### CONTROLLER #############################
-
-# from pygame.locals import KEYDOWN, QUIT, K_ESCAPE, K_UP, K_DOWN, K_LEFT, K_RIGHT
-
-class Controller():
-    def __init__(self, m):
-        self.m = m
-        # pygame.init()
-    
-    def poll(self):
-        cmd = random.choice(self.m.cmd_directions.keys())
-        if cmd:
-            self.m.do_cmd(cmd)
-
-################### VIEW #############################
-import random
-# import pygame
-
-class View():
-    def __init__(self, m):
-        self.m = m
-        # pygame.init()
-        # self.screen = pygame.display.set_mode((400, 300))
-        self.counter = 0
-        
-    def display(self):
-        # screen = self.screen
-        # borders = [pygame.Rect(b[0], b[1], b[2], b[3]) for b in self.m.borders]
-        # pellets = [pygame.Rect(p[0], p[1], p[2], p[3]) for p in self.m.pellets]
-        b = self.m.mybox
-        # myrect = pygame.Rect(b[0], b[1], b[2], b[3])
-        # screen.fill((0, 0, 64))  # dark blue
-        self.counter += 1
-        if self.counter == 50:
-            print("Position: " +str(b[0]) +", "+ str(b[1]))
-            self.counter = 0
-        else:
-            pass
-        # pygame.draw.rect(screen, (0, 191, 255), myrect)  # Deep Sky Blue
-        # [pygame.draw.rect(screen, (255, 192, 203), p) for p in pellets]  # pink
-        # [pygame.draw.rect(screen, (0, 191, 255), b) for b in borders]  # red
-        # pygame.display.update()
-    
-################### LOOP #############################
-
-model = Model()
-c = Controller(model)
-v = View(model)
-
-while not model.game_over:
-    sleep(0.02)
-    c.poll()
-    model.update()
-    v.display()
+                
